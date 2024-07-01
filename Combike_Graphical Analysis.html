@@ -1,0 +1,281 @@
+<!-- Author: Michael John Montano -->
+<!-- 1st Sprint Update: N/A-->
+<!-- 2nd Sprint Update: N/A-->
+<!-- 3rd Sprint Update: N/A-->
+<!-- 4th Sprint Update: N/A-->
+<!-- 5th Sprint Update: N/A-->
+<!-- 6th Sprint Update: N/A-->
+<!-- 7th Sprint Update: 06/30/2024 (Deadline: 07/07/2024)-->
+  <!-- 07/01/2024 Update: Adding Interpretation, Ride Counter and Modal Buttons (Lines 203-338 in styles.css; Lines 51-59 in index.html)-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records > Combike</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" href="symbol.png" type="image/x-icon">
+    <link rel="shortcut icon" href="symbol.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles_gallery.css"> <!-- Link your CSS file -->
+</head>
+<body>
+<div class="center-container">
+  <a href="https://mjamontano.github.io/Cycling_Journey/" class="home-button">Go back to "Cycling Journey"</a>
+</div>
+<h1></h1>
+<header>
+  <div class="banner">
+    Graphical Analysis
+  </div>
+  <div class="content">
+    <h1>Two Wheels, One Soul</h1>
+    <p>Freedom on every pedal stroke</p>
+  </div>
+</header>
+<div class="full-img" id="fullImgBox">
+  <img src="01032024 P1.png" id="fullImg">
+  <span onclick="closeFullImg()">Close</span>
+</div>
+<nav class="menu">
+  <ul>
+    <li><a href="https://mjamontano.github.io/Combike_Home/">Home</a></li>
+    <li>|||</li>
+    <li><a href="https://mjamontano.github.io/Combike_Tabular-Inventory/">Tabular Inventory</a></li>
+    <li>|||</li>
+    <li><a href="#">Graphical Analysis</a></li>
+    <li>|||</li>
+    <li><a href="https://combike.de/">About Combike</a></li>
+  </ul>
+</nav>
+<h1></h1>
+<div class="logo">Ride Counter</div>
+<div class="container">
+  <div class="column">
+    <h1>First Ride: December 20, 2023</h1>
+  </div>
+  <div class="column">
+    <div class="counter">
+      <button onclick="increment()">+</button>
+      <input type="number" id="count" value="0" readonly>
+      <button onclick="decrement()">-</button>
+    </div>
+  </div>
+  <div class="column">
+    <h1>Last Ride: June 23, 2024</h1>
+  </div>
+</div>
+<h1></h1>
+<div class="logo">Purpose: Bike to Work</div>
+<table id="table1">
+  <tr>
+      <th>Calories Burned (kcal)</th>
+      <th>Distance (mi)</th>
+      <th>Average Speed (mph)</th>
+      <th>Max Altitude (ft)</th>
+      <th>Cal Burned vs Ave Speed</th>
+      <th>Max Alt vs Distance</th>
+      <th>Rank of Calories Burned</th>
+      <th>Rank of Distance</th>
+      <th>Rank of Average Speed</th>
+      <th>Rank of Max Altitude</th>
+  </tr>
+  <tr>
+      <td><div class="gallery"><img src="btw1.png" onclick="openFullImg(this.src)" alt="Calories Burned (kcal)"></div></td>
+      <td><div class="gallery"><img src="btw2.png" onclick="openFullImg(this.src)" alt="Distance (mi)"></div></td>
+      <td><div class="gallery"><img src="btw3.png" onclick="openFullImg(this.src)" alt="Average Speed (mph)"></div></td>
+      <td><div class="gallery"><img src="btw4.png" onclick="openFullImg(this.src)" alt="Max Altitude (ft)"></div></td>
+      <td><div class="gallery"><img src="btw5.png" onclick="openFullImg(this.src)" alt="Cal Burned vs Ave Speed"></div></td>
+      <td><div class="gallery"><img src="btw6.png" onclick="openFullImg(this.src)" alt="Max Alt vs Distance"></div></td>
+      <td><div class="gallery"><img src="btw7.png" onclick="openFullImg(this.src)" alt="Rank of Calories Burned"></div></td>
+      <td><div class="gallery"><img src="btw8.png" onclick="openFullImg(this.src)" alt="Rank of Distance"></div></td>
+      <td><div class="gallery"><img src="btw9.png" onclick="openFullImg(this.src)" alt="Rank of Average Speed"></div></td>
+      <td><div class="gallery"><img src="btw10.png" onclick="openFullImg(this.src)" alt="Rank of Max Altitude"></div></td>
+  </tr>
+</table>
+ <div class="logo">Interpretation</div>
+ <table id="table2">
+  <tr>
+      <th>Calories Burned (kcal)</th>
+      <th>Distance (mi)</th>
+      <th>Average Speed (mph)</th>
+      <th>Max Altitude (ft)</th>
+      <th>Cal Burned vs Ave Speed</th>
+      <th>Max Alt vs Distance</th>
+      <th>Rank of Calories Burned</th>
+      <th>Rank of Distance</th>
+      <th>Rank of Average Speed</th>
+      <th>Rank of Max Altitude</th>
+  </tr>
+  <tr>
+    <td>
+      <!-- Button to open the modal -->
+      <button id="openModalBtn">Click here</button>
+      <!-- The Modal -->
+      <div id="myModal1" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Calories Burned (kcal)</h2>
+          </div>
+          <div class="modal-body">
+            <p>Modal content goes here...</p>
+          </div>
+          <div class="modal-footer">
+            <button id="closeModalBtn">Close</button>
+          </div>
+        </div>
+      </div>
+      <script src="script.js"></script>
+    </td>
+      <td><div class="gallery"><img src="btw2.png" onclick="openFullImg(this.src)" alt="Distance (mi)"></div></td>
+      <td><div class="gallery"><img src="btw3.png" onclick="openFullImg(this.src)" alt="Average Speed (mph)"></div></td>
+      <td><div class="gallery"><img src="btw4.png" onclick="openFullImg(this.src)" alt="Max Altitude (ft)"></div></td>
+      <td><div class="gallery"><img src="btw5.png" onclick="openFullImg(this.src)" alt="Cal Burned vs Ave Speed"></div></td>
+      <td><div class="gallery"><img src="btw6.png" onclick="openFullImg(this.src)" alt="Max Alt vs Distance"></div></td>
+      <td><div class="gallery"><img src="btw7.png" onclick="openFullImg(this.src)" alt="Rank of Calories Burned"></div></td>
+      <td><div class="gallery"><img src="btw8.png" onclick="openFullImg(this.src)" alt="Rank of Distance"></div></td>
+      <td><div class="gallery"><img src="btw9.png" onclick="openFullImg(this.src)" alt="Rank of Average Speed"></div></td>
+      <td><div class="gallery"><img src="btw10.png" onclick="openFullImg(this.src)" alt="Rank of Max Altitude"></div></td>
+  </tr>
+</table>
+<h1></h1>
+ <div class="logo">Purpose: Home from Work</div>
+<table id="table3">
+  <tr>
+      <th>Calories Burned (kcal)</th>
+      <th>Distance (mi)</th>
+      <th>Average Speed (mph)</th>
+      <th>Max Altitude (ft)</th>
+      <th>Cal Burned vs Ave Speed</th>
+      <th>Max Alt vs Distance</th>
+      <th>Rank of Calories Burned</th>
+      <th>Rank of Distance</th>
+      <th>Rank of Average Speed</th>
+      <th>Rank of Max Altitude</th>
+  </tr>
+  <tr>
+      <td><div class="gallery"><img src="hfw1.png" onclick="openFullImg(this.src)" alt="Calories Burned (kcal)"></div></td>
+      <td><div class="gallery"><img src="hfw2.png" onclick="openFullImg(this.src)" alt="Distance (mi)"></div></td>
+      <td><div class="gallery"><img src="hfw3.png" onclick="openFullImg(this.src)" alt="Average Speed (mph)"></div></td>
+      <td><div class="gallery"><img src="hfw4.png" onclick="openFullImg(this.src)" alt="Max Altitude (ft)"></div></td>
+      <td><div class="gallery"><img src="hfw5.png" onclick="openFullImg(this.src)" alt="Cal Burned vs Ave Speed"></div></td>
+      <td><div class="gallery"><img src="hfw6.png" onclick="openFullImg(this.src)" alt="Max Alt vs Distance"></div></td>
+      <td><div class="gallery"><img src="hfw7.png" onclick="openFullImg(this.src)" alt="Rank of Calories Burned"></div></td>
+      <td><div class="gallery"><img src="hfw8.png" onclick="openFullImg(this.src)" alt="Rank of Distance"></div></td>
+      <td><div class="gallery"><img src="hfw9.png" onclick="openFullImg(this.src)" alt="Rank of Average Speed"></div></td>
+      <td><div class="gallery"><img src="hfw10.png" onclick="openFullImg(this.src)" alt="Rank of Max Altitude"></div></td>
+  </tr>
+</table>
+ <div class="logo">Interpretation</div>
+ <table id="table4">
+  <tr>
+      <th>Calories Burned (kcal)</th>
+      <th>Distance (mi)</th>
+      <th>Average Speed (mph)</th>
+      <th>Max Altitude (ft)</th>
+      <th>Cal Burned vs Ave Speed</th>
+      <th>Max Alt vs Distance</th>
+      <th>Rank of Calories Burned</th>
+      <th>Rank of Distance</th>
+      <th>Rank of Average Speed</th>
+      <th>Rank of Max Altitude</th>
+  </tr>
+  <tr>
+      <td><div class="gallery"><img src="btw1.png" onclick="openFullImg(this.src)" alt="Calories Burned (kcal)"></div></td>
+      <td><div class="gallery"><img src="btw2.png" onclick="openFullImg(this.src)" alt="Distance (mi)"></div></td>
+      <td><div class="gallery"><img src="btw3.png" onclick="openFullImg(this.src)" alt="Average Speed (mph)"></div></td>
+      <td><div class="gallery"><img src="btw4.png" onclick="openFullImg(this.src)" alt="Max Altitude (ft)"></div></td>
+      <td><div class="gallery"><img src="btw5.png" onclick="openFullImg(this.src)" alt="Cal Burned vs Ave Speed"></div></td>
+      <td><div class="gallery"><img src="btw6.png" onclick="openFullImg(this.src)" alt="Max Alt vs Distance"></div></td>
+      <td><div class="gallery"><img src="btw7.png" onclick="openFullImg(this.src)" alt="Rank of Calories Burned"></div></td>
+      <td><div class="gallery"><img src="btw8.png" onclick="openFullImg(this.src)" alt="Rank of Distance"></div></td>
+      <td><div class="gallery"><img src="btw9.png" onclick="openFullImg(this.src)" alt="Rank of Average Speed"></div></td>
+      <td><div class="gallery"><img src="btw10.png" onclick="openFullImg(this.src)" alt="Rank of Max Altitude"></div></td>
+  </tr>
+</table>
+<h1></h1>
+ <div class="logo">Purpose: Others</div>
+<table id="table5">
+  <tr>
+      <th>Calories Burned (kcal)</th>
+      <th>Distance (mi)</th>
+      <th>Average Speed (mph)</th>
+      <th>Max Altitude (ft)</th>
+      <th>Cal Burned vs Ave Speed</th>
+      <th>Max Alt vs Distance</th>
+      <th>Rank of Calories Burned</th>
+      <th>Rank of Distance</th>
+      <th>Rank of Average Speed</th>
+      <th>Rank of Max Altitude</th>
+  </tr>
+  <tr>
+      <td><div class="gallery"><img src="o1.png" onclick="openFullImg(this.src)" alt="Calories Burned (kcal)"></div></td>
+      <td><div class="gallery"><img src="o2.png" onclick="openFullImg(this.src)" alt="Distance (mi)"></div></td>
+      <td><div class="gallery"><img src="o3.png" onclick="openFullImg(this.src)" alt="Average Speed (mph)"></div></td>
+      <td><div class="gallery"><img src="o4.png" onclick="openFullImg(this.src)" alt="Max Altitude (ft)"></div></td>
+      <td><div class="gallery"><img src="o5.png" onclick="openFullImg(this.src)" alt="Cal Burned vs Ave Speed"></div></td>
+      <td><div class="gallery"><img src="o6.png" onclick="openFullImg(this.src)" alt="Max Alt vs Distance"></div></td>
+      <td><div class="gallery"><img src="o7.png" onclick="openFullImg(this.src)" alt="Rank of Calories Burned"></div></td>
+      <td><div class="gallery"><img src="o8.png" onclick="openFullImg(this.src)" alt="Rank of Distance"></div></td>
+      <td><div class="gallery"><img src="o9.png" onclick="openFullImg(this.src)" alt="Rank of Average Speed"></div></td>
+      <td><div class="gallery"><img src="o10.png" onclick="openFullImg(this.src)" alt="Rank of Max Altitude"></div></td>
+  </tr>
+</table>
+<div class="logo">Interpretation</div>
+<table id="table6">
+  <tr>
+      <th>Calories Burned (kcal)</th>
+      <th>Distance (mi)</th>
+      <th>Average Speed (mph)</th>
+      <th>Max Altitude (ft)</th>
+      <th>Cal Burned vs Ave Speed</th>
+      <th>Max Alt vs Distance</th>
+      <th>Rank of Calories Burned</th>
+      <th>Rank of Distance</th>
+      <th>Rank of Average Speed</th>
+      <th>Rank of Max Altitude</th>
+  </tr>
+  <tr>
+      <td><div class="gallery"><img src="btw1.png" onclick="openFullImg(this.src)" alt="Calories Burned (kcal)"></div></td>
+      <td><div class="gallery"><img src="btw2.png" onclick="openFullImg(this.src)" alt="Distance (mi)"></div></td>
+      <td><div class="gallery"><img src="btw3.png" onclick="openFullImg(this.src)" alt="Average Speed (mph)"></div></td>
+      <td><div class="gallery"><img src="btw4.png" onclick="openFullImg(this.src)" alt="Max Altitude (ft)"></div></td>
+      <td><div class="gallery"><img src="btw5.png" onclick="openFullImg(this.src)" alt="Cal Burned vs Ave Speed"></div></td>
+      <td><div class="gallery"><img src="btw6.png" onclick="openFullImg(this.src)" alt="Max Alt vs Distance"></div></td>
+      <td><div class="gallery"><img src="btw7.png" onclick="openFullImg(this.src)" alt="Rank of Calories Burned"></div></td>
+      <td><div class="gallery"><img src="btw8.png" onclick="openFullImg(this.src)" alt="Rank of Distance"></div></td>
+      <td><div class="gallery"><img src="btw9.png" onclick="openFullImg(this.src)" alt="Rank of Average Speed"></div></td>
+      <td><div class="gallery"><img src="btw10.png" onclick="openFullImg(this.src)" alt="Rank of Max Altitude"></div></td>
+  </tr>
+</table>
+
+<script>
+  var fullImgBox = document.getElementById("fullImgBox");
+  var fullImg = document.getElementById("fullImg");
+  
+  function openFullImg(pic){
+    fullImgBox.style.display = "flex";
+    fullImg.src = pic;
+  }
+
+  function closeFullImg(){
+    fullImgBox.style.display = "none";
+  }
+
+  function increment() {
+  var count = document.getElementById('count');
+  count.value = parseInt(count.value) + 1;
+}
+
+function decrement() {
+  var count = document.getElementById('count');
+  if (parseInt(count.value) > 0) {
+    count.value = parseInt(count.value) - 1;
+  }
+}
+</script>
+
+</body>
+</html>

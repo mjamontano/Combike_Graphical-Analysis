@@ -1,0 +1,340 @@
+<style>
+  /* Basic CSS Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+    /* Header styles */
+  header {
+    background-color: #2d2d66;
+    color: #ddd;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .banner {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 90px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+  }
+
+    /* Logo styling */
+  .logo {
+    background-color: rgba(45, 45, 102, 0.90); /* Background color of the logo */
+    border: inset #8366ad; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    color: #fff; /* Change the color as needed */
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    word-spacing: 15px;
+  }
+
+
+  /* Body styles */
+  body {
+    background-image: url('logo.png');
+    background-repeat: repeat;
+    background-size: 100px 100px;
+    background-position: center;
+  }
+
+  /* Content styles */
+  .content {
+    background-image: url('banner.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 23px;
+    padding: 90px;
+    text-align: right;
+    color: #ddd; /* Set text color for better readability */
+    font-family: Arial, Helvetica, sans-serif; /* Set your preferred font stack */
+    background-color: #2d2d66;
+}
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .banner {
+      font-size: 20px;
+    }
+  }
+
+/* Style for the gallery container */
+.gallery {
+  height: auto; /* Maintain the aspect ratio */
+  width: 100%; /* Set the desired width */
+}
+
+.gallery img {
+  width: 100%; /* Make sure the image fills its container */
+  cursor: pointer;
+}
+
+.gallery img:hover{
+  transform: scale(0.8) rotate(-15deg);
+  border-radius: 20px;
+  box-shadow: 0 32px 75px rgba(68,77,136,0.2);
+  border-color: #2d2d66;
+  border-width: 5px;
+}
+
+.gallery:hover .overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.full-img{
+  width: 100%;
+  height: 100%;
+  background: rgba(131, 102, 173, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.full-img img{
+  width: 100%;
+  max-width: 500px;
+  border: solid 5px;
+  border-color:#8366ad;
+}
+
+.full-img span{
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border-radius: 15px; 
+  background-color: #2d2d66;
+  border: solid 5px;
+  border-color:#8366ad;
+}
+
+/* Style for the home button */
+.home-button {
+  display: inline-block;
+  background-color: #2d2d66;
+  color: white;
+  text-decoration: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  border: solid;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: inset #8366ad;
+}
+
+.home-button:hover {
+  background-color: #2d2d66; /* Darker shade of the primary color on hover */
+}
+
+.center-container {
+  text-align: right;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+  
+table1, table2, table3, table4, table5, table6, th, td {
+  border: inset #2d2d66;
+}
+
+th, td, h2, h3 {
+  text-align: center;
+  padding: 5px;
+}
+
+tr:nth-child(even) {
+  background-color: #8366ad;
+  color: white;
+}
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.menu {
+  background-color: #2d2d66;
+}
+
+.menu ul {
+  list-style-type: square;
+  padding: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.menu ul li {
+  display: inline-block;
+}
+
+.menu ul li a {
+  display: block;
+  padding: 5px 5px;
+  color: #fff;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.menu ul li a:hover {
+  background-color: #8366ad;
+}
+
+/*Counter*/
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+input[type="number"] {
+  width: 50px;
+  padding: 5px;
+  text-align: center;
+  border: 5px solid #8366ad;
+  border-radius: 4px;
+  margin: 0 10px;
+}
+
+button {
+  padding: 8px 10px;
+  background-color: #8366ad;
+  color: #2d2d66;
+  border: solid #8366ad;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2d2d66;
+}
+
+.button-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  gap: 0; /* Gap between columns */
+  text-align: center;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 5px;
+}
+
+.column {
+  padding: 5px;
+  background-color: rgba(45, 45, 102, 0.90);
+  border: 3px solid #2d2d66;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 10px 16px;
+  background-color: #5cb85c;
+  color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* Close button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 10px 16px;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 10px 16px;
+  background-color: #5cb85c;
+  color: white;
+  text-align: right;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* Button inside footer */
+.modal-footer button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Button hover effect */
+.modal-footer button:hover {
+  background-color: #45a049;
+}
+
+</style>

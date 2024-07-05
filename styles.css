@@ -200,34 +200,21 @@ tr:nth-child(odd) {
   background-color: #8366ad;
 }
 
-/*Counter*/
-.counter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Arial, sans-serif;
-}
-
-input[type="number"] {
-  width: 50px;
-  padding: 5px;
-  text-align: center;
-  border: 5px solid #8366ad;
-  border-radius: 4px;
-  margin: 0 10px;
-}
-
 button {
   padding: 8px 10px;
-  background-color: #8366ad;
-  color: #2d2d66;
+  background-color: #2d2d66;
+  color: white;
   border: solid #8366ad;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+  width: 100%
 }
 
 button:hover {
-  background-color: #2d2d66;
+  background-color: #8366ad;
+  color: #2d2d66;
 }
 
 .button-container {
@@ -246,7 +233,7 @@ button:hover {
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 10px;
   letter-spacing: 5px;
 }
 
@@ -266,22 +253,22 @@ button:hover {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgba(45, 45, 102, 0.30); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: rgba(45, 45, 102, 1);
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid #8366ad;
   width: 80%; /* Could be more or less, depending on screen size */
 }
 
 /* Modal Header */
 .modal-header {
   padding: 10px 16px;
-  background-color: #5cb85c;
+  background-color: rgba(45, 45, 102, 1);
   color: white;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -297,7 +284,7 @@ button:hover {
 
 .close:hover,
 .close:focus {
-  color: #000;
+  color: #8366ad;
   text-decoration: none;
   cursor: pointer;
 }
@@ -305,36 +292,18 @@ button:hover {
 /* Modal Body */
 .modal-body {
   padding: 10px 16px;
+  color: white;
 }
 
 /* Modal Footer */
 .modal-footer {
   padding: 10px 16px;
-  background-color: #5cb85c;
+  background-color: rgba(45, 45, 102, 1);
   color: white;
-  text-align: right;
+  text-align: center;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-}
-
-/* Button inside footer */
-.modal-footer button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px 24px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-/* Button hover effect */
-.modal-footer button:hover {
-  background-color: #45a049;
+  font-weight: bold;
 }
 
 </style>

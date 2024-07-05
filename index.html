@@ -6,7 +6,7 @@
 <!-- 5th Sprint Update: N/A-->
 <!-- 6th Sprint Update: N/A-->
 <!-- 7th Sprint Update: 06/30/2024 (Deadline: 07/07/2024)-->
-  <!-- 07/01/2024 Update: Adding Interpretation, Ride Counter and Modal Buttons (Lines 203-338 in styles.css; Lines 51-59 in index.html)-->
+  <!-- 07/02/2024 Update: Adding Interpretation, Ride Counter and Modal Buttons (Lines 203-307 in styles.css; Lines 51-63, Lines 91-102, Lines 105-260, Lines 289-300, Lines 302-457, Lines 486-497, & Lines 499-656 in index.html)-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +43,7 @@
     <li>|||</li>
     <li><a href="https://mjamontano.github.io/Combike_Tabular-Inventory/">Tabular Inventory</a></li>
     <li>|||</li>
-    <li><a href="#">Graphical Analysis</a></li>
+    <li><a href="https://mjamontano.github.io/Combike_Graphical-Analysis/">Graphical Analysis</a></li>
     <li>|||</li>
     <li><a href="https://combike.de/">About Combike</a></li>
   </ul>
@@ -52,17 +52,13 @@
 <div class="logo">Ride Counter</div>
 <div class="container">
   <div class="column">
-    <h1>First Ride: December 20, 2023</h1>
+    <h1>First Ride: <b>December 20, 2023</b></h1>
   </div>
   <div class="column">
-    <div class="counter">
-      <button onclick="increment()">+</button>
-      <input type="number" id="count" value="0" readonly>
-      <button onclick="decrement()">-</button>
-    </div>
+    <h1>Number of Rides: <b>38</b></h1>
   </div>
   <div class="column">
-    <h1>Last Ride: June 23, 2024</h1>
+    <h1>Last Ride: <b>June 23, 2024</b></h1>
   </div>
 </div>
 <h1></h1>
@@ -92,57 +88,186 @@
       <td><div class="gallery"><img src="btw9.png" onclick="openFullImg(this.src)" alt="Rank of Average Speed"></div></td>
       <td><div class="gallery"><img src="btw10.png" onclick="openFullImg(this.src)" alt="Rank of Max Altitude"></div></td>
   </tr>
-</table>
- <div class="logo">Interpretation</div>
- <table id="table2">
   <tr>
-      <th>Calories Burned (kcal)</th>
-      <th>Distance (mi)</th>
-      <th>Average Speed (mph)</th>
-      <th>Max Altitude (ft)</th>
-      <th>Cal Burned vs Ave Speed</th>
-      <th>Max Alt vs Distance</th>
-      <th>Rank of Calories Burned</th>
-      <th>Rank of Distance</th>
-      <th>Rank of Average Speed</th>
-      <th>Rank of Max Altitude</th>
-  </tr>
-  <tr>
-    <td>
-      <!-- Button to open the modal -->
-      <button id="openModalBtn">Click here</button>
-      <!-- The Modal -->
-      <div id="myModal1" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-          <div class="modal-header">
-            <span class="close">&times;</span>
-            <h2>Calories Burned (kcal)</h2>
-          </div>
-          <div class="modal-body">
-            <p>Modal content goes here...</p>
-          </div>
-          <div class="modal-footer">
-            <button id="closeModalBtn">Close</button>
-          </div>
-        </div>
-      </div>
-      <script src="script.js"></script>
-    </td>
-      <td><div class="gallery"><img src="btw2.png" onclick="openFullImg(this.src)" alt="Distance (mi)"></div></td>
-      <td><div class="gallery"><img src="btw3.png" onclick="openFullImg(this.src)" alt="Average Speed (mph)"></div></td>
-      <td><div class="gallery"><img src="btw4.png" onclick="openFullImg(this.src)" alt="Max Altitude (ft)"></div></td>
-      <td><div class="gallery"><img src="btw5.png" onclick="openFullImg(this.src)" alt="Cal Burned vs Ave Speed"></div></td>
-      <td><div class="gallery"><img src="btw6.png" onclick="openFullImg(this.src)" alt="Max Alt vs Distance"></div></td>
-      <td><div class="gallery"><img src="btw7.png" onclick="openFullImg(this.src)" alt="Rank of Calories Burned"></div></td>
-      <td><div class="gallery"><img src="btw8.png" onclick="openFullImg(this.src)" alt="Rank of Distance"></div></td>
-      <td><div class="gallery"><img src="btw9.png" onclick="openFullImg(this.src)" alt="Rank of Average Speed"></div></td>
-      <td><div class="gallery"><img src="btw10.png" onclick="openFullImg(this.src)" alt="Rank of Max Altitude"></div></td>
+      <td><button onclick="openModal('modal1')">Interpretation</button></td>
+      <td><button onclick="openModal('modal2')">Interpretation</button></td>
+      <td><button onclick="openModal('modal3')">Interpretation</button></td>
+      <td><button onclick="openModal('modal4')">Interpretation</button></td>
+      <td><button onclick="openModal('modal5')">Interpretation</button></td>
+      <td><button onclick="openModal('modal6')">Interpretation</button></td>
+      <td><button onclick="openModal('modal7')">Interpretation</button></td>
+      <td><button onclick="openModal('modal8')">Interpretation</button></td>
+      <td><button onclick="openModal('modal9')">Interpretation</button></td>
+      <td><button onclick="openModal('modal10')">Interpretation</button></td>
   </tr>
 </table>
+
+<!-- The Modal -->
+<div id="modal1" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Calories Burned (kcal)</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Date</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal2" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Distance (mi)</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Date</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal3" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Average Speed (mph)</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Date</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal4" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Max Altitude (ft)</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Date</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal5" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Cal Burned vs Ave Speed</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Calories Burned (kcal)</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal6" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Max Alt vs Distance</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Max Altitude (ft)</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal7" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Rank of Calories Burned</h2>
+    </div>
+    <div class="modal-body">
+      <p>This pie chart illustrates that majority of the rides <b>have exceeded</b> the average calories burned.</p> 
+      <p>Highest: 1887 kcal (Date: 05/08/2024 - Home from Work)</p>
+      <p>Lowest: 25 kcal (Date: 01/19/2024 - Home from Aunt's)</p>
+    </div>
+    <div class="modal-footer">
+      <h2>ave_calburned ~ 107.12</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal8" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Rank of Distance</h2>
+    </div>
+    <div class="modal-body">
+      <p>This pie chart illustrates that majority of the rides <b>haven't exceeded</b> the average distance.</p> 
+      <p>Highest: 13.8 mi (Date: 05/20/2024 - Training)</p>
+      <p>Lowest: 1.9 mi (Date: 01/19/2024 - Home from Aunt's)</p>
+    </div>
+    <div class="modal-footer">
+      <h2>ave_dist ~ 2.64</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal9" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Rank of Average Speed</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal10" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Rank of Max Altitude</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+
 <h1></h1>
  <div class="logo">Purpose: Home from Work</div>
-<table id="table3">
+<table id="table2">
   <tr>
       <th>Calories Burned (kcal)</th>
       <th>Distance (mi)</th>
@@ -167,37 +292,179 @@
       <td><div class="gallery"><img src="hfw9.png" onclick="openFullImg(this.src)" alt="Rank of Average Speed"></div></td>
       <td><div class="gallery"><img src="hfw10.png" onclick="openFullImg(this.src)" alt="Rank of Max Altitude"></div></td>
   </tr>
-</table>
- <div class="logo">Interpretation</div>
- <table id="table4">
   <tr>
-      <th>Calories Burned (kcal)</th>
-      <th>Distance (mi)</th>
-      <th>Average Speed (mph)</th>
-      <th>Max Altitude (ft)</th>
-      <th>Cal Burned vs Ave Speed</th>
-      <th>Max Alt vs Distance</th>
-      <th>Rank of Calories Burned</th>
-      <th>Rank of Distance</th>
-      <th>Rank of Average Speed</th>
-      <th>Rank of Max Altitude</th>
-  </tr>
-  <tr>
-      <td><div class="gallery"><img src="btw1.png" onclick="openFullImg(this.src)" alt="Calories Burned (kcal)"></div></td>
-      <td><div class="gallery"><img src="btw2.png" onclick="openFullImg(this.src)" alt="Distance (mi)"></div></td>
-      <td><div class="gallery"><img src="btw3.png" onclick="openFullImg(this.src)" alt="Average Speed (mph)"></div></td>
-      <td><div class="gallery"><img src="btw4.png" onclick="openFullImg(this.src)" alt="Max Altitude (ft)"></div></td>
-      <td><div class="gallery"><img src="btw5.png" onclick="openFullImg(this.src)" alt="Cal Burned vs Ave Speed"></div></td>
-      <td><div class="gallery"><img src="btw6.png" onclick="openFullImg(this.src)" alt="Max Alt vs Distance"></div></td>
-      <td><div class="gallery"><img src="btw7.png" onclick="openFullImg(this.src)" alt="Rank of Calories Burned"></div></td>
-      <td><div class="gallery"><img src="btw8.png" onclick="openFullImg(this.src)" alt="Rank of Distance"></div></td>
-      <td><div class="gallery"><img src="btw9.png" onclick="openFullImg(this.src)" alt="Rank of Average Speed"></div></td>
-      <td><div class="gallery"><img src="btw10.png" onclick="openFullImg(this.src)" alt="Rank of Max Altitude"></div></td>
-  </tr>
+    <td><button onclick="openModal('modal11')">Interpretation</button></td>
+    <td><button onclick="openModal('modal12')">Interpretation</button></td>
+    <td><button onclick="openModal('modal13')">Interpretation</button></td>
+    <td><button onclick="openModal('modal14')">Interpretation</button></td>
+    <td><button onclick="openModal('modal15')">Interpretation</button></td>
+    <td><button onclick="openModal('modal16')">Interpretation</button></td>
+    <td><button onclick="openModal('modal17')">Interpretation</button></td>
+    <td><button onclick="openModal('modal18')">Interpretation</button></td>
+    <td><button onclick="openModal('modal19')">Interpretation</button></td>
+    <td><button onclick="openModal('modal20')">Interpretation</button></td>
+</tr>
 </table>
+<!-- The Modal -->
+<div id="modal11" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Calories Burned (kcal)</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Date</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal12" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Distance (mi)</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Date</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal13" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Average Speed (mph)</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Date</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal14" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Max Altitude (ft)</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Date</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal15" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Cal Burned vs Ave Speed</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Calories Burned (kcal)</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal16" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Max Alt vs Distance</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Max Altitude (ft)</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal17" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Rank of Calories Burned</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal18" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Rank of Distance</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal19" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Rank of Average Speed</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal20" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Rank of Max Altitude</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+
 <h1></h1>
  <div class="logo">Purpose: Others</div>
-<table id="table5">
+<table id="table3">
   <tr>
       <th>Calories Burned (kcal)</th>
       <th>Distance (mi)</th>
@@ -222,60 +489,177 @@
       <td><div class="gallery"><img src="o9.png" onclick="openFullImg(this.src)" alt="Rank of Average Speed"></div></td>
       <td><div class="gallery"><img src="o10.png" onclick="openFullImg(this.src)" alt="Rank of Max Altitude"></div></td>
   </tr>
-</table>
-<div class="logo">Interpretation</div>
-<table id="table6">
   <tr>
-      <th>Calories Burned (kcal)</th>
-      <th>Distance (mi)</th>
-      <th>Average Speed (mph)</th>
-      <th>Max Altitude (ft)</th>
-      <th>Cal Burned vs Ave Speed</th>
-      <th>Max Alt vs Distance</th>
-      <th>Rank of Calories Burned</th>
-      <th>Rank of Distance</th>
-      <th>Rank of Average Speed</th>
-      <th>Rank of Max Altitude</th>
-  </tr>
-  <tr>
-      <td><div class="gallery"><img src="btw1.png" onclick="openFullImg(this.src)" alt="Calories Burned (kcal)"></div></td>
-      <td><div class="gallery"><img src="btw2.png" onclick="openFullImg(this.src)" alt="Distance (mi)"></div></td>
-      <td><div class="gallery"><img src="btw3.png" onclick="openFullImg(this.src)" alt="Average Speed (mph)"></div></td>
-      <td><div class="gallery"><img src="btw4.png" onclick="openFullImg(this.src)" alt="Max Altitude (ft)"></div></td>
-      <td><div class="gallery"><img src="btw5.png" onclick="openFullImg(this.src)" alt="Cal Burned vs Ave Speed"></div></td>
-      <td><div class="gallery"><img src="btw6.png" onclick="openFullImg(this.src)" alt="Max Alt vs Distance"></div></td>
-      <td><div class="gallery"><img src="btw7.png" onclick="openFullImg(this.src)" alt="Rank of Calories Burned"></div></td>
-      <td><div class="gallery"><img src="btw8.png" onclick="openFullImg(this.src)" alt="Rank of Distance"></div></td>
-      <td><div class="gallery"><img src="btw9.png" onclick="openFullImg(this.src)" alt="Rank of Average Speed"></div></td>
-      <td><div class="gallery"><img src="btw10.png" onclick="openFullImg(this.src)" alt="Rank of Max Altitude"></div></td>
-  </tr>
+    <td><button onclick="openModal('modal21')">Interpretation</button></td>
+    <td><button onclick="openModal('modal22')">Interpretation</button></td>
+    <td><button onclick="openModal('modal23')">Interpretation</button></td>
+    <td><button onclick="openModal('modal24')">Interpretation</button></td>
+    <td><button onclick="openModal('modal25')">Interpretation</button></td>
+    <td><button onclick="openModal('modal26')">Interpretation</button></td>
+    <td><button onclick="openModal('modal27')">Interpretation</button></td>
+    <td><button onclick="openModal('modal28')">Interpretation</button></td>
+    <td><button onclick="openModal('modal29')">Interpretation</button></td>
+    <td><button onclick="openModal('modal30')">Interpretation</button></td>
+</tr>
 </table>
+<!-- The Modal -->
+<div id="modal21" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Calories Burned (kcal)</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Date</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal22" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Distance (mi)</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Date</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal23" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Average Speed (mph)</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Date</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal24" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Max Altitude (ft)</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Date</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal25" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Cal Burned vs Ave Speed</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Calories Burned (kcal)</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal26" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Max Alt vs Distance</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+      <h2>x-axis: Max Altitude (ft)</h2>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal27" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Rank of Calories Burned</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal28" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Rank of Distance</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal29" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Rank of Average Speed</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="modal30" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Rank of Max Altitude</h2>
+    </div>
+    <div class="modal-body">
+      <p>Modal content goes here...</p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
 
-<script>
-  var fullImgBox = document.getElementById("fullImgBox");
-  var fullImg = document.getElementById("fullImg");
-  
-  function openFullImg(pic){
-    fullImgBox.style.display = "flex";
-    fullImg.src = pic;
-  }
-
-  function closeFullImg(){
-    fullImgBox.style.display = "none";
-  }
-
-  function increment() {
-  var count = document.getElementById('count');
-  count.value = parseInt(count.value) + 1;
-}
-
-function decrement() {
-  var count = document.getElementById('count');
-  if (parseInt(count.value) > 0) {
-    count.value = parseInt(count.value) - 1;
-  }
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
